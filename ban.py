@@ -1,6 +1,6 @@
-#  Copyright (c) 2022 @TheRiZoeL - RiZoeL
+#  Copyright (c) 2022 @_II_ZEUS_XD_II - ZEUS_XD
 # Telegram Ban All Bot 
-# Creator - RiZoeL
+# Creator - ZEUS
 
 import logging
 import re
@@ -55,7 +55,7 @@ SUDO_USERS = []
 for x in Var.SUDO: 
     SUDO_USERS.append(x)
 
-@Riz.on(events.NewMessage(pattern="^/ping"))  
+@vir.on(events.NewMessage(pattern="^/ping"))  
 async def ping(e):
     if e.sender_id in SUDO_USERS:
         start = datetime.now()
@@ -63,10 +63,10 @@ async def ping(e):
         event = await e.reply(text, parse_mode=None, link_preview=None )
         end = datetime.now()
         ms = (end-start).microseconds / 1000
-        await event.edit(f"**I'm On** \n\n __Pong__ !! `{ms}` ms")
+        await event.edit(f"**I'm On** \n\n __𝙑𝙄𝙍𝙐𝙎..⚡𝙋𝙊𝙉𝙂__ !! `{ms}` ms")
 
 
-@Riz.on(events.NewMessage(pattern="^/kickall"))
+@vir.on(events.NewMessage(pattern="^/kickall"))
 async def kickall(event):
    if event.sender_id in SUDO_USERS:
      if not event.is_group:
@@ -75,12 +75,12 @@ async def kickall(event):
      else:
          await event.delete()
          RiZ = await event.get_chat()
-         RiZoeLop = await event.client.get_me()
+         Virusop = await event.client.get_me()
          admin = RiZ.admin_rights
          creator = RiZ.creator
          if not admin and not creator:
               return await event.reply("I Don't have sufficient Rights !!")
-         RiZoeL = await Riz.send_message(event.chat_id, "**Hello !! I'm Alive**")
+         Virus = await Riz.send_message(event.chat_id, "**Hello !! I'm Alive**")
          admins = await event.client.get_participants(event.chat_id, filter=ChannelParticipantsAdmins)
          admins_id = [i.id for i in admins]
          all = 0
@@ -95,10 +95,10 @@ async def kickall(event):
              except Exception as e:
                     print(str(e))
                     await asyncio.sleep(0.1)
-         await RiZoeL.edit(f"**Users Kicked Successfully ! \n\n Kicked:** `{kimk}` \n **Total:** `{all}`")
+         await Virus.edit(f"**Users Kicked Successfully ! \n\n Kicked:** `{kimk}` \n **Total:** `{all}`")
     
 
-@Riz.on(events.NewMessage(pattern="^/banall"))
+@vir.on(events.NewMessage(pattern="^/banall"))
 async def banall(event):
    if event.sender_id in SUDO_USERS:
      if not event.is_group:
@@ -107,12 +107,12 @@ async def banall(event):
      else:
          await event.delete()
          RiZ = await event.get_chat()
-         RiZoeLop = await event.client.get_me()
+         Virusop = await event.client.get_me()
          admin = RiZ.admin_rights
          creator = RiZ.creator
          if not admin and not creator:
               return await event.reply("I Don't have sufficient Rights !!")
-         RiZoeL = await Riz.send_message(event.chat_id, "**Hello !! I'm Alive**")
+         Virus = await Riz.send_message(event.chat_id, "**Hello !! I'm Alive**")
          admins = await event.client.get_participants(event.chat_id, filter=ChannelParticipantsAdmins)
          admins_id = [i.id for i in admins]
          all = 0
@@ -127,10 +127,10 @@ async def banall(event):
              except Exception as e:
                    print(str(e))
                    await asyncio.sleep(0.1)
-         await RiZoeL.edit(f"**Users Banned Successfully ! \n\n Banned Users:** `{bann}` \n **Total Users:** `{all}`")
+         await Virus.edit(f"**Users Banned Successfully ! \n\n Banned Users:** `{bann}` \n **Total Users:** `{all}`")
 
     
-@Riz.on(events.NewMessage(pattern="^/unbanall"))
+@virus.on(events.NewMessage(pattern="^/unbanall"))
 async def unban(event):
    if event.sender_id in SUDO_USERS:
      if not event.is_group:
@@ -153,12 +153,12 @@ async def unban(event):
          await msg.edit("{}: {} unbanned".format(event.chat_id, p))
 
 
-@Riz.on(events.NewMessage(pattern="^/leave"))
+@virus.on(events.NewMessage(pattern="^/leave"))
 async def _(e):
     if e.sender_id in SUDO_USERS:
-        rizoel = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+        Virus = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         if len(e.text) > 7:
-            bc = rizoel[0]
+            bc = Virus[0]
             bc = int(bc)
             text = "Leaving....."
             event = await e.reply(text, parse_mode=None, link_preview=None )
@@ -178,7 +178,7 @@ async def _(e):
                 await event.edit(str(e))   
           
 
-@Riz.on(events.NewMessage(pattern="^/restart"))
+@virus.on(events.NewMessage(pattern="^/restart"))
 async def restart(e):
     if e.sender_id in SUDO_USERS:
         text = "__Restarting__ !!!"
